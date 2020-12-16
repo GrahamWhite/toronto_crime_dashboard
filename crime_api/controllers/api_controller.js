@@ -2,8 +2,21 @@
 'use strict';
 
 
+
+
 var mongoose = require('mongoose'),
     Task = mongoose.model('Crimes');
+
+
+
+exports.get_raw_crime_data = async function (req, res) {
+    let dataController = require('./data_controller');
+
+    await dataController.GetRawData();
+    res.json("Raw Crime Data Goes Here ... not implemented yet");
+};
+
+
 
 exports.list_all_tasks = function(req, res) {
     Task.find({}, function(err, task) {
@@ -12,16 +25,6 @@ exports.list_all_tasks = function(req, res) {
         res.json(task);
     });
 };
-
-exports.get_raw_crime_data = async function (req, res) {
-
-
-    res.json("Raw Crime Data Goes Here ... not implemented yet");
-};
-
-
-
-
 exports.create_a_task = function(req, res) {
     var new_task = new Task(req.body);
     new_task.save(function(err, task) {
@@ -30,8 +33,6 @@ exports.create_a_task = function(req, res) {
         res.json(task);
     });
 };
-
-
 exports.read_a_task = function(req, res) {
     Task.findById(req.params.taskId, function(err, task) {
         if (err)
@@ -39,8 +40,6 @@ exports.read_a_task = function(req, res) {
         res.json(task);
     });
 };
-
-
 exports.update_a_task = function(req, res) {
     Task.findOneAndUpdate({_id: req.params.taskId}, req.body, {new: true}, function(err, task) {
         if (err)
@@ -48,8 +47,6 @@ exports.update_a_task = function(req, res) {
         res.json(task);
     });
 };
-
-
 exports.delete_a_task = function(req, res) {
 
 
