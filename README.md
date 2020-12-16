@@ -14,10 +14,10 @@
 
 #####API Links:
 *Current crimes being responded to by toronto police (limited to x30)*
-- ```http://localhost:3000/crimes```
+- GET ```http://localhost:3000/crimes```
 
 *Current addresses/areas being responded to by toronto police (limited to x30)*
-- ```http://localhost:3000/addresses```
+- GET ```http://localhost:3000/addresses```
 
 
 ###Futures Features

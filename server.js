@@ -11,9 +11,6 @@ let express = require('express'),
 
 let Crime = require('./models/crime_model');
 
-
-
-
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/dbCrime').then(msg =>{
