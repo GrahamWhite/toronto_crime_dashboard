@@ -16,7 +16,10 @@ exports.get_crime_data = function (req, res) {
             console.log(promise);
         });
         res.json(x);
+
     });
+
+
 };
 
 
