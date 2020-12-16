@@ -18,7 +18,7 @@ module.exports = function(app) {
         .post(todoList.create_a_task);
 
     app.route('/crimes_raw')
-        .get(todoList.get_raw_crime_data);
+        .get(todoList.get_crime_address_data);
 
     app.route('/tasks/:taskId')
         .get(todoList.read_a_task)

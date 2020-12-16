@@ -9,11 +9,22 @@ var mongoose = require('mongoose'),
 
 
 
-exports.get_raw_crime_data = async function (req, res) {
+exports.get_crime_address_data = function (req, res) {
     let dataController = require('./data_controller');
 
-    await dataController.GetRawData();
-    res.json("Raw Crime Data Goes Here ... not implemented yet");
+    let data = dataController.GetRawData();
+
+    Promise.resolve(data).then(x => {
+        x.forEach(promise => {
+            Promise.resolve(promise).then(y => {
+                console.log(y);
+
+                res.send(y);
+            }).catch(e => {
+                res.json('error: ');
+            })
+        });
+    })
 };
 
 
