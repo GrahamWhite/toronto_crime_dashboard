@@ -20,7 +20,8 @@
 
 
 #####Known Issues:
-1. Should be available at https://toronto-crime-dashboard.herokuapp.com/crimes and https://toronto-crime-dashboard.herokuapp.com/addresses, however I ran into issues implementing Heroku
+1. Should be available at https://toronto-crime-dashboard.herokuapp.com/crimes and https://toronto-crime-dashboard.herokuapp.com/addresses, however I ran into issues implementing Heroku.
+    - *Can still be hosted locally*
 
 
 ###Futures Features
